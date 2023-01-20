@@ -6,8 +6,8 @@ def logger(path):
         def new_function(*args, **kwargs):
             time_ = datetime.now()
             value = old_function(*args, **kwargs)
-            with open(path, 'w', encoding='utf-8') as file:
-                file.write(f'{time_} | {old_function.__name__} | {args=} | {kwargs=} | {value}')
+            with open(path, 'a', encoding='utf-8') as file:
+                file.write(f'{time_} | {old_function.__name__} | {args=} | {kwargs=} | {value}\n')
             return value
         return new_function
     return __logger

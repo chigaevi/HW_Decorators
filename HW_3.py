@@ -22,11 +22,6 @@ def smartes_superhero(list_heros):
                     smartest_hero.append(name)
     return print(smartest_hero)
 
-# def get_name_intelligence_list():
-#     all_superheros = get_all_superhero_list()
-#     for superhero in all_superheros:
-#         print(superhero['name'],'-',superhero['powerstats']['intelligence'])
-
 if __name__ == '__main__':
     superheros = ['Hulk', 'Captain America', 'Thanos', 'Watcher', 'Vision']
     smartes_superhero(superheros)

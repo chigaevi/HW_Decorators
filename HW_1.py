@@ -1,15 +1,12 @@
 import os
 from datetime import datetime
 
-
-# В 'main.log' вывести дату и время вызова функции, имя функции, аргументы, с которыми вызвалась и возвращаемое значение.
-
 def logger(old_function):
     def new_function(*args, **kwargs):
         time_ = datetime.now()
         value = old_function(*args, **kwargs)
-        with open('main.log', 'w', encoding='utf-8') as file:
-            file.write(f'{time_} | {old_function.__name__} | {args=} | {kwargs=} | {value}')
+        with open('main.log', 'a', encoding='utf-8') as file:
+            file.write(f'{time_} | {old_function.__name__} | {args=} | {kwargs=} | {value}\n')
         return value
     return new_function
 
