@@ -3,8 +3,10 @@ import logging
 from datetime import datetime
 
 def logger(path):
+    path = os.path.abspath(path)
     def __logger(old_function):
         def new_function(*args, **kwargs):
+
             value = old_function(*args, **kwargs)
             message = (f'{datetime.now()}, {old_function.__name__}, {args=}, {kwargs=}, {value}')
             logging.basicConfig(filename=path,
